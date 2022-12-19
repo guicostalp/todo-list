@@ -1,10 +1,14 @@
 import {createPage} from "./landing-page"
-import { getInput } from "./get-input";
+import {getInput} from "./get-input";
 
 
 
 createPage();
 getInput();
+
+
+
+
 
 const btn = document.getElementById('create-task');
 

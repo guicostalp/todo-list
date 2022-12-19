@@ -1,12 +1,48 @@
 
 let allTasks = [
     {
-        "title": 'xyz',
+        "title": 'Terminar Odin Project',
+        "description": '',
+        "dueDate": '',
+        "priority": '',
+        "project": 'emprego'
+    },  
+    {
+        "title": 'Enviar Curriculo',
+        "description": '',
+        "dueDate": '',
+        "priority": '',
+        "project": 'emprego'
+    },
+    {
+        "title": 'Ligar para IRD',
         "description": 'abc1234',
         "dueDate": '',
         "priority": '',
-        "project": 'yasdfn'
+        "project": 'contas'
+    },
+    {
+        "title": 'Pagar prestacao do carro',
+        "description": 'abc1234',
+        "dueDate": '',
+        "priority": '',
+        "project": 'contas'
+    },
+    {
+        "title": 'Procurar proximo destino',
+        "description": '',
+        "dueDate": '',
+        "priority": '',
+        "project": 'ferias'
+    },
+    {
+        "title": 'Fazer poupanca',
+        "description": 'abc1234',
+        "dueDate": '',
+        "priority": '',
+        "project": 'ferias'
     }
+    
 ]
 
 export {allTasks}

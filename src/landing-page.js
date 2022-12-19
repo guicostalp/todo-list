@@ -1,3 +1,11 @@
+import { allTasks } from "./create-task";
+
+for (let i=0; i < allTasks.length; i++) {
+
+    console.log(allTasks)
+
+}
+
 function createPage () {
     //Remove content from 'container' div
     document.querySelector('.container').textContent = ''

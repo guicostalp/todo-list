@@ -17,12 +17,6 @@ export function getInput(){
         createTask(formTitle, formDesc,formDueDate,formPrio,formProject);
         createDiv(formTitle);
 
-
-
-
-
-
-
     })  
 
 }
