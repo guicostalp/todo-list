@@ -4,12 +4,13 @@ export function createProjectDiv () {
 
     for (let i=0; i < allProjects.length; i++) {
         const projectId = allProjects[i].id
-        const div = document.createElement("div"); //create tag
-        div.setAttribute("class", `project`); //set CLASS    
-        div.setAttribute("id", `project-${projectId}`); //set CLASS 
         const projectName = allProjects[i].project
         const nameTransform = projectName[0].toUpperCase() + projectName.substring(1)
-        //Create DIV Content
+ 
+        const div = document.createElement("div"); //create tag
+        div.setAttribute("class", `project`); //set CLASS    
+        div.setAttribute("id", projectName); //set CLASS 
+       //Create DIV Content
         let createText = '';
         createText += '<p>Project: '+nameTransform+'</p>';
             //Create task list for each project
@@ -47,9 +48,18 @@ export function createProjectOptions (project) {
 
 export function addTask (project, title) {
 
-    const found = allProjects.find(projectExist => projectExist === project)
+    const a = document.getElementById(project)
+    let createText = ''
+        createText += '<ls>'+title+'</ls>'
 
-    console.log(found)
+        a.innerHTML += createText
+
+    
+
+
+
+
+    console.log(a)
 
     console.log(project)
     console.log(title)
