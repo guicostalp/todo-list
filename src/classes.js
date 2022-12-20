@@ -92,13 +92,15 @@ class Task {
     }
 }
 
-export function createTask(title, description, dueDate, priority, project) {
+export function createObject(title, description, dueDate, priority, project) {
     let newProject = new Project(project);
     allProjects.push(newProject)
+    console.log("This is allProjects array from classes.js after one object is created:")
     console.log(allProjects)
     
     let task = new Task (title, description, dueDate, priority, project);
     allTasks.push(task);
+    console.log("This is allTasks array from classes.js after one object is created:")
     console.log(allTasks)
 
 }

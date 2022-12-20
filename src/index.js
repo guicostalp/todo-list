@@ -1,6 +1,7 @@
-import {createProjectDiv,addProject} from "./dom-manip"
+import {addProject, loadProjects} from "./dom-manip"
 import {getInput} from "./get-input";
 
 
-createProjectDiv();
+loadProjects();
 getInput();
+addProject();

@@ -1,5 +1,5 @@
-import {createTask} from "./create-task";
-import {addTask} from "./dom-manip"
+import {createObject} from "./classes";
+import {createTaskList} from "./dom-manip"
 
 
 
@@ -12,10 +12,12 @@ export function getInput(){
         const formPrio = document.querySelector('#priority').value
         const formProject = document.querySelector('#project').value.toLowerCase()
 
-        addTask(formProject, formTitle);
+
+        createTaskList(formProject, formTitle)
 
 
-        createTask(formTitle, formDesc,formDueDate,formPrio,formProject);
+
+        createObject(formTitle, formDesc,formDueDate,formPrio,formProject);
 
 
     })  

@@ -1,38 +1,65 @@
-import {allTasks, allProjects} from "./create-task"
+import {allTasks, allProjects} from "./classes"
 
-export function createProjectDiv () {
+export function loadProjects () {
 
-    for (let i=0; i < allProjects.length; i++) {
+    for (let i=0; i < allProjects.length; i++) {  
+
         const projectId = allProjects[i].id
         const projectName = allProjects[i].project
         const nameTransform = projectName[0].toUpperCase() + projectName.substring(1)
- 
-        const div = document.createElement("div"); //create tag
-        div.setAttribute("class", `project`); //set CLASS    
-        div.setAttribute("id", projectName); //set CLASS 
-       //Create DIV Content
-        let createText = '';
-        createText += '<p>Project: '+nameTransform+'</p>';
-            //Create task list for each project
+
+        //Create Div for each Project
+        createProjectDiv(projectName)
+
+            //Create task ul list for each project
             for (let i=0; i < allTasks.length; i++) {
                 const taskId = allTasks[i].id
                 if (taskId === projectId) {
-                    createText += '<ul><ls>'+allTasks[i].title+'</ls></ul>'     
+                    const title = allTasks[i].title
+                    createTaskList(projectName, title)    
                 }
             }
 
-        //Insert content inside DIV
-        div.innerHTML = createText;
-
-        //appendChild to div ID books
-        document.getElementById("board").appendChild(div);  
 
         //Includes on Form options Menus
-
         createProjectOptions(projectName)
     }
 } 
 
+export function createProjectDiv(project) {
+
+    const newProject = project[0].toUpperCase() + project.substring(1)
+    const div = document.createElement("div");
+    const ul = document.createElement("ul");
+    div.setAttribute("class", "project")
+    div.setAttribute("id", project)
+    ul.setAttribute("id", `tasks-${project}`);
+    document.getElementById("board").appendChild(div)
+    const projectDiv = document.getElementById(`${project}`)
+    console.log (projectDiv)
+
+    let divContent = ''
+        divContent += '<p>Project: '+newProject+'</p>'        
+        projectDiv.innerHTML += divContent
+    
+    document.getElementById(`${project}`).appendChild(ul)
+
+}
+
+export function createTaskList (project,title) {
+
+    const li = document.createElement("li")
+    const ul = document.getElementById(`tasks-${project}`)
+    let listContent = ''
+        listContent += title
+    li.innerHTML += listContent
+    ul.appendChild(li)
+
+
+}
+
+
+//Create Project option on form select Menu
 export function createProjectOptions (project) {
 
     const projectName = project[0].toUpperCase() + project.substring(1)
@@ -46,6 +73,25 @@ export function createProjectOptions (project) {
         formSelect.appendChild(formOption);
 }
 
+        //Buttons
+
+export function addProject () {
+
+    const btn = document.getElementById('newProject')
+
+    btn.addEventListener('click', () => {
+
+        const newProject = prompt("Please insert new Project name:")
+
+        createProjectOptions(newProject)
+        createProjectDiv(newProject)
+
+        console.log("im alive")
+
+    })
+
+}
+
 export function addTask (project, title) {
 
     const a = document.getElementById(project)
@@ -54,17 +100,8 @@ export function addTask (project, title) {
 
         a.innerHTML += createText
 
-    
 
-
-
-
-    console.log(a)
-
-    console.log(project)
-    console.log(title)
-
-    
-
+        //Reset form after click on "Add Task"
+        document.getElementById("main-form").reset()
 }
 
