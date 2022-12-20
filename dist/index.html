@@ -8,8 +8,35 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <div class="container"></div>
-    
+    <div class="container">
+        <div class="header"><input type="text" placeholder="Search Project"></div>
+
+        <div class="side-bar">
+            <form id="main-form" >
+                <div class="form-input">Title
+                    <input id="title" type="text" placeholder="Title"></div>
+                <div class="form-input">Description
+                    <input id="description" type="text" placeholder="Description"></div>
+                <div class="form-input">Due Date
+                    <input id="dueDate" type="date" placeholder="dueDate"></div>
+                <div class="form-input">Priority
+                    <select id="priority">
+                    <option value="high">High</option>
+                    <option value="medium">Medium</option>
+                    <option value="low">Low</option>
+                </select></div>
+                <div class="form-input">Project
+                    <select id="project">
+                    </select></div>
+                <button id="input-button" type="button" form="main-form">Add Task</button><span><button id="newProject">New Project</button></span>
+            </form>
+        </div>
+
+        <div id="board" class="board"></div>
+
+        
+
+    </div>
     <script src="main.js"></script>
 
 

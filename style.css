@@ -17,10 +17,18 @@ body {
     
 }
 
-.landing-page {
+.board {
 
-    display: flex;
-    
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 20px;
 
+}
+
+.project {
+
+    height: 200px;
+    background-color: gray;
+    border-radius: 8px;
 
 }
