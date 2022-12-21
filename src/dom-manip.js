@@ -104,4 +104,3 @@ export function addTask (project, title) {
         //Reset form after click on "Add Task"
         document.getElementById("main-form").reset()
 }
-
