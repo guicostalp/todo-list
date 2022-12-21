@@ -1,8 +1,8 @@
 import {createObject} from "./classes";
-import {createTaskList} from "./dom-manip"
+import {createTaskList} from "./dom-manip";
 
 
-
+//Handle button on form
 export function getInput(){
     const addBtn = document.getElementById('input-button')
     addBtn.addEventListener('click', () => {
@@ -14,12 +14,8 @@ export function getInput(){
 
 
         createTaskList(formProject, formTitle)
-
-
-
         createObject(formTitle, formDesc,formDueDate,formPrio,formProject);
 
 
     })  
-
 }

@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     border: 1px solid black;
+
 }
 
 body {
@@ -11,10 +12,37 @@ body {
 
 }
 
+.header {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    padding: 10
+
+}
+
+.header input {
+
+    text-align: center;
+    height: 20px;
+    width: 50vw;
+    border-radius: 20px;
+
+}
+
 .container {
 
     width: 100vw;
+    display: flex;
     
+}
+
+.side-bar {
+
+    width: 30vw;
+    height: 90vh;
+
 }
 
 .board {
@@ -22,6 +50,7 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
     gap: 20px;
+    width: 70vw;
 
 }
 

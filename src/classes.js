@@ -92,6 +92,7 @@ class Task {
     }
 }
 
+
 export function createObject(title, description, dueDate, priority, project) {
     let newProject = new Project(project);
     allProjects.push(newProject)
